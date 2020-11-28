@@ -97,7 +97,7 @@ public class AdminController {
     public String updateUserDetailsPostController(@ModelAttribute("updatableUser") User user
             , @RequestParam("roleName")String[] roleName, @RequestParam("isActive") String isActive){
         for(String roles : roleName) {
-            Role role = roleService.getRoleByName(roles);
+            Role role = roleService.getRoleByName(roles); //TODO сделать то же самое в старом проекте без Бута
             if(role == null) {
                 role = new Role(roles);
             }

@@ -30,7 +30,7 @@ public class UserDaoImp implements UserDao{
     }
 
 
-    @Override
+    @Override//TODO сделать через EntityGraph
     public User  getUserByUsername( String username ) {
         User user = (User) em.createQuery("select user from User user JOIN FETCH user.roles where user.username =:username").setParameter("username", username).getSingleResult();
         return user;
